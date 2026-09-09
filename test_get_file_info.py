@@ -1,18 +1,10 @@
 from functions.get_files_info import get_files_info
+from functions.get_file_content import get_file_content
+from functions.write_file import write_file
+from functions.run_python_file import run_python_file
 
 def main():
     working_dir = "calculator"
-
-    root_contents = get_files_info(working_dir)
-    print(root_contents)
-
-    pkg_contents = get_files_info(working_dir, "pkg")
-    print(pkg_contents)
-
-    a_contents = get_files_info(working_dir, "/bin")
-    print(a_contents)
-
-    b_contents = get_files_info(working_dir, "../")
-    print(b_contents)
+    print(run_python_file(working_dir, "main.py", ["3 + 5"]))
 
 main()
